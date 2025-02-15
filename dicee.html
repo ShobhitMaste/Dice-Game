@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Refresh Me</title>
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=DynaPuff:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+      html{
+        background-color: #34353E;
+      }
+      .maintitle{
+        font-size: 7rem;
+        text-align: center;
+        color:#44C497;
+        font-family: "Sour Gummy", serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+        font-variation-settings:
+          "wdth" 100;
+        margin-top:2%;
+        margin-bottom:1%;
+      }
+      .container{
+        display: flex;
+        justify-content: center;
+        gap: 6%;
+        margin-bottom: 6%;
+      }
+      .player{
+        color:#44C497;
+        font-weight:100;
+        font-size:3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Sour Gummy", serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+        font-variation-settings:
+          "wdth" 100;
+      }
+      .flex-center{
+        display: flex;
+        justify-content: center;
+      }
+      .invisible{
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-center">
+      <h1 style="display:inline;" class="maintitle">Refresh Me</h1>
+      <img height="200px" style="display:inline;" src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1f3c1.gif">
+    </div>
+    <div class="container">
+      <div class="player">
+        <p>Player 1</p>
+        <img class="p1" src="./images/dice1.png">
+      </div>
+      <div class="player">
+        <p>Player 2</p>
+        <img class="p2" src="./images/dice1.png">
+      </div>
+    </div>
+    <footer>
+       <center>
+        <p style="color:white">© 2023 Shobhit Singh. All Rights Reserved</p>
+       </center>
+    </footer>
+
+    <script>
+      var n1 = Math.floor((Math.random() * 6 )+ 1);
+      var n2 = Math.floor((Math.random() * 6 )+ 1);
+      switch(n1){
+        case 1:document.querySelector(".p1").setAttribute("src", "./images/dice1.png");
+              break;
+        case 2:document.querySelector(".p1").setAttribute("src", "./images/dice2.png");
+              break;
+        case 3:document.querySelector(".p1").setAttribute("src", "./images/dice3.png");
+              break;  
+        case 4:document.querySelector(".p1").setAttribute("src", "./images/dice4.png");
+              break;
+        case 5:document.querySelector(".p1").setAttribute("src", "./images/dice5.png");
+              break;
+        case 6:document.querySelector(".p1").setAttribute("src", "./images/dice6.png");
+      }
+      switch(n2){
+        case 1:document.querySelector(".p2").setAttribute("src", "./images/dice1.png");
+              break;
+        case 2:document.querySelector(".p2").setAttribute("src", "./images/dice2.png");
+              break;
+        case 3:document.querySelector(".p2").setAttribute("src", "./images/dice3.png");
+              break;  
+        case 4:document.querySelector(".p2").setAttribute("src", "./images/dice4.png");
+              break;
+        case 5:document.querySelector(".p2").setAttribute("src", "./images/dice5.png");
+              break;
+        case 6:document.querySelector(".p2").setAttribute("src", "./images/dice6.png");
+      }
+      if(n1 > n2){
+        document.querySelector("h1").textContent = "‎ ‎‎   ‎ ‎ ‎ ‎ Player 1 Wins";
+        document.querySelector("img").classList.remove("invisible");
+      }
+      else if(n1 == n2){
+        document.querySelector("h1").textContent = "‎ ‎‎   ‎ ‎ ‎ ‎ Draw";
+        document.querySelector("img").classList.add("invisible");
+      }
+      if(n1 < n2){
+        document.querySelector("h1").textContent = "‎ ‎‎   ‎ ‎ ‎ ‎ Player 2 Wins";
+        document.querySelector("img").classList.remove("invisible");
+      }
+    </script>
+
+  </body>
+</html>
